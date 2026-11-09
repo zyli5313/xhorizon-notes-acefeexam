@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FE Civil Transportation in Six Formulas: Curves, Sight Distance, Flow and Pavement</title><meta name="description" content="A worked guide to six FE Civil transportation formulas: horizontal curves, superelevation, stopping sight distance, crest curves, traffic flow and pavement SN."><meta name="robots" content="index,follow">
+<style>body{font-family:system-ui,sans-serif;max-width:720px;margin:2rem auto;padding:0 1rem;line-height:1.65;color:#222}h1{line-height:1.25}a{color:#0b5cad}</style>
+</head><body><article><h1>FE Civil Transportation in Six Formulas: Curves, Sight Distance, Flow and Pavement</h1>
+<p>Transportation is one of the larger blocks on the FE Civil exam. The NCEES specification puts between 9 and 14 of the 110 scored items in this area, and the <a href="https://acefeexam.com/fe/civil/transportation-engineering">AceFEExam transportation engineering overview</a> lists the five sub-topics the outline names: geometric design, pavement design, traffic capacity and flow, traffic control devices, and planning. The good news is that most of these questions come down to a short list of relationships that are printed in the FE Reference Handbook. The work is knowing which one applies and keeping the units straight.</p>
+<p>Below are six of those relationships, each with a small example worked from scratch. The numbers are made up for practice; the formulas are the standard US customary forms.</p>
+<h2>1. Horizontal curve geometry</h2>
+<p>For a simple circular curve with radius R and deflection angle I:</p>
+<ul><li>Tangent length: T = R tan(I/2)</li><li>Curve length: L = πRI/180, with I in degrees</li></ul>
+<p>Example: R = 1,500 ft and I = 30°. Then T = 1,500 × tan 15° = 1,500 × 0.2679 = 401.9 ft, and L = π × 1,500 × 30 / 180 = 785.4 ft.</p>
+<p>If the PI sits at station 25+00, the PC is 2,500 − 401.9 = 2,098.1 ft, or station 20+98.1. The PT is found by adding the curve length to the PC, not the tangent to the PI: 2,098.1 + 785.4 = 2,883.5 ft, station 28+83.5. Adding T to the PI would give 29+01.9, which is a classic wrong answer choice. The <a href="https://acefeexam.com/app/fe-civil/learn/civil-engineering/transportation/horizontal-and-vertical-curves">horizontal and vertical curves study unit</a> covers the stationing convention in more detail.</p>
+<h2>2. Minimum radius from superelevation and friction</h2>
+<p>The point-mass relationship is e + f = V² / (15R), with V in mph and R in ft. Rearranged: R = V² / (15(e + f)).</p>
+<p>Example: design speed 60 mph, maximum superelevation 0.08, side friction factor 0.12. R = 3,600 / (15 × 0.20) = 1,200 ft. A smaller radius would need more superelevation or more friction than the design allows.</p>
+<h2>3. Stopping sight distance</h2>
+<p>SSD is the distance travelled during perception-reaction time plus the braking distance:</p>
+<p>SSD = 1.47Vt + V² / (30(a/32.2 ± G))</p>
+<p>Example on level ground: V = 50 mph, t = 2.5 s, a = 11.2 ft/s². The reaction part is 1.47 × 50 × 2.5 = 183.8 ft. The braking part is 2,500 / (30 × 0.3478) = 2,500 / 10.43 = 239.6 ft. The total is about 423 ft, which lines up with the commonly tabulated 425 ft for 50 mph.</p>
+<p>On a 4% downgrade the grade term is subtracted: 2,500 / (30 × 0.3078) = 270.7 ft of braking, for a total near 454 ft. The sign of G is the detail most often flipped under time pressure. The <a href="https://acefeexam.com/app/fe-civil/learn/civil-engineering/transportation/stopping-sight-distance-and-curve-length">stopping sight distance and curve length unit</a> ties this number to the vertical curve check that follows.</p>
+<h2>4. Crest vertical curve length</h2>
+<p>With a 3.5 ft eye height and a 2.0 ft object height, the crest curve length for S &lt; L is L = AS² / 2,158, where A is the algebraic difference in grades in percent.</p>
+<p>Example: a +3% grade meets a −4% grade, so A = 7. Using S = 425 ft, L = 7 × 180,625 / 2,158 = 585.9 ft. Because 585.9 ft is longer than 425 ft, the S &lt; L assumption holds. If the result had come out shorter than S, the other form, L = 2S − 2,158/A, would be the one to use. Checking the assumption after solving is a quick habit that catches a lot of errors.</p>
+<h2>5. Traffic flow and peak hour factor</h2>
+<p>The basic identity is q = k × v: flow equals density times space-mean speed. In the Greenshields model, speed falls linearly with density, v = vf(1 − k/kj), and capacity occurs at half the jam density: q max = vf × kj / 4.</p>
+<p>Example: free-flow speed 60 mph and jam density 200 veh/mi/lane give a capacity of 60 × 200 / 4 = 3,000 veh/h/lane, reached at 100 veh/mi and 30 mph.</p>
+<p>The peak hour factor compares the full hour to its busiest 15 minutes: PHF = V / (4 × V15). With 15-minute counts of 410, 455, 520 and 470, the hourly volume is 1,855 and PHF = 1,855 / (4 × 520) = 0.892. The design flow rate is V / PHF = 2,080 veh/h. A PHF above 1.0 is always a sign of an inverted ratio. The <a href="https://acefeexam.com/app/fe-civil/learn/civil-engineering/transportation/traffic-flow-and-capacity">traffic flow and capacity unit</a> goes through level of service on the same footing.</p>
+<h2>6. Flexible pavement structural number</h2>
+<p>In the AASHTO flexible pavement method, each layer adds to the structural number:</p>
+<p>SN = a1D1 + a2D2m2 + a3D3m3</p>
+<p>Example: 4 in of asphalt (a1 = 0.44), 8 in of granular base (a2 = 0.14, m2 = 1.0) and 10 in of subbase (a3 = 0.11, m3 = 1.0). SN = 1.76 + 1.12 + 1.10 = 3.98. The drainage coefficients apply only to the unbound layers, never to the surface course.</p>
+<p>A related planning calculation is the crash rate per million entering vehicles at an intersection: rate = crashes × 10⁶ / (365 × years × entering ADT). Twelve crashes in 3 years with 18,000 entering vehicles per day gives 12,000,000 / 19,710,000 = 0.61 crashes per million entering vehicles.</p>
+<h2>Turning formulas into exam speed</h2>
+<p>Reading the formulas is not the same as using them under a clock. The FE works out to a little under three minutes per item on average, and transportation problems often have one tempting distractor built from a sign error or a skipped term. Working a set of <a href="https://acefeexam.com/fe/civil/practice-problems/transportation-engineering">FE Civil transportation practice problems</a> with the handbook open shows quickly which relationships you can find and apply in under three minutes and which ones still need review. A timed full-length run on <a href="https://acefeexam.com/">AceFEExam</a> then shows whether transportation is costing you more time than its share of the exam.</p>
+</article></body></html>
